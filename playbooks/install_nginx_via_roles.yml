@@ -1,0 +1,6 @@
+-
+  name: Install nginx and deploy web page
+  hosts: servers
+  become: yes
+  roles:
+    - nginx

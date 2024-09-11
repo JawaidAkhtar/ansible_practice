@@ -1,0 +1,21 @@
+-
+ 
+  name: This is for a simple web page project
+  hosts: servers
+  become: yes
+  tasks:
+    - name: install nginx
+      apt:
+        name: nginx
+        state: latest
+    
+    - name: start & enable nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+    
+    - name: copy index.html in system's web file
+      copy:
+       src: index.html
+       dest: /var/www/html

@@ -1,0 +1,10 @@
+-
+  name: Install AWS CLI with condition
+  hosts: servers
+  become: yes
+  tasks:
+    - name: install AWS CLI only on debian os
+      apt:
+        name: awscli
+        state: latest
+      when: ansible_distribution == 'Debian'
